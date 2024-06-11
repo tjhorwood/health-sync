@@ -106,6 +106,7 @@ export default function FeaturesHome() {
                 <div className="relative flex flex-col text-center lg:text-right" data-aos="zoom-y-out" ref={tabs}>
                   {/* Item 1 */}
                   <Transition
+                    as='div'
                     show={tab === 1}
                     enter="transition ease-in-out duration-700 transform order-first"
                     enterFrom="opacity-0 translate-y-16"
@@ -125,6 +126,7 @@ export default function FeaturesHome() {
                   </Transition>
                   {/* Item 2 */}
                   <Transition
+                    as='div'
                     show={tab === 2}
                     enter="transition ease-in-out duration-700 transform order-first"
                     enterFrom="opacity-0 translate-y-16"
@@ -144,6 +146,7 @@ export default function FeaturesHome() {
                   </Transition>
                   {/* Item 3 */}
                   <Transition
+                    as='div'
                     show={tab === 3}
                     enter="transition ease-in-out duration-700 transform order-first"
                     enterFrom="opacity-0 translate-y-16"

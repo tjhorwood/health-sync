@@ -66,7 +66,7 @@ export default function TestimonialsCarousel() {
       setActive(active + 1 === items.length ? 0 : active => active + 1)
     }, autorotateTiming)
     return () => clearInterval(interval)
-  }, [active, autorotate])
+  }, [active, autorotate, autorotateTiming, items.length])
 
   const heightFix = () => {
     if (testimonials.current && testimonials.current.parentElement) testimonials.current.parentElement.style.height = `${testimonials.current.clientHeight}px`
@@ -195,6 +195,7 @@ export default function TestimonialsCarousel() {
 
                   {items.map((item, index) => (
                     <Transition
+                      as='div'
                       key={index}
                       show={active === index}
                       enter="transition ease-in-out duration-700 transform order-first"

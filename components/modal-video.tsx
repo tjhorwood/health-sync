@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useRef, Fragment } from 'react'
+import { useState, useRef } from 'react'
 import type { StaticImageData } from 'next/image'
-import { Dialog, Transition } from '@headlessui/react'
+import { Dialog, DialogPanel, Transition, TransitionChild } from '@headlessui/react'
 import Image from 'next/image'
 
 interface ModalVideoProps {
@@ -75,11 +75,12 @@ export default function ModalVideo({
       </div>
       {/* End: Video thumbnail */}
 
-      <Transition show={modalOpen} as={Fragment} afterEnter={() => videoRef.current?.play()}>
+      <Transition show={modalOpen} as="div" afterEnter={() => videoRef.current?.play()}>
         <Dialog initialFocus={videoRef} onClose={() => setModalOpen(false)}>
 
           {/* Modal backdrop */}
-          <Transition.Child
+          <TransitionChild
+            as='div'
             enter="transition ease-out duration-200"
             enterFrom="opacity-0"
             enterTo="opacity-100"
@@ -91,7 +92,8 @@ export default function ModalVideo({
           {/* End: Modal backdrop */}
 
           {/* Modal dialog */}
-          <Transition.Child
+          <TransitionChild
+            as='div'
             enter="transition ease-out duration-200"
             enterFrom="opacity-0 scale-95"
             enterTo="opacity-100 scale-100"
@@ -100,14 +102,14 @@ export default function ModalVideo({
             leaveTo="opacity-0 scale-95"
           >
             <div className="max-w-6xl mx-auto h-full flex items-center">
-              <Dialog.Panel className="w-full max-h-full aspect-video bg-black overflow-hidden">
+              <DialogPanel className="w-full max-h-full aspect-video bg-black overflow-hidden">
                 <video ref={videoRef} width={videoWidth} height={videoHeight} loop controls>
                   <source src={video} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
-              </Dialog.Panel>
+              </DialogPanel>
             </div>
-          </Transition.Child>
+          </TransitionChild>
           {/* End: Modal dialog */}
 
         </Dialog>
