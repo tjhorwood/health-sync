@@ -53,7 +53,7 @@ export default function Header() {
           <nav className="hidden md:flex md:grow">
 
             {/* Desktop menu links */}
-            <ul className="flex grow justify-end flex-wrap items-center text-lg font-medium gap-4">
+            <ul className="flex grow justify-end flex-wrap items-center  font-medium gap-4">
               {navItems.map((item, itemIdx) => (
                 <li key={itemIdx}>
                   <Link
@@ -66,12 +66,12 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-            <div className="flex grow justify-end flex-wrap items-center gap-6">
-              <Button size="lg" className='hover:scale-125 transition duration-300 space-x-2'>
+            <div className="flex grow justify-end flex-wrap items-center gap-4">
+              <Button size="lg" className='hover:scale-[1.15] transition duration-300 space-x-2'>
                 <FaApple className="h-5 w-5" />
                 <span>MacOS</span>
               </Button>
-              <Button size="lg" className='hover:scale-125 transition-all duration-300 space-x-2'>
+              <Button size="lg" className='hover:scale-[1.15] transition-all duration-300 space-x-2'>
                 <FaWindows className="h-5 w-5" />
                 <span>Windows</span>
               </Button>

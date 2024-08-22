@@ -1,3 +1,4 @@
+const plugin = require('tailwindcss/plugin')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -135,6 +136,7 @@ module.exports = {
         float: 'float 3s ease-in-out infinite',
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        shine: "shine 2.5s linear infinite",
       },
       keyframes: {
         float: {
@@ -149,6 +151,10 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        shine: {
+          '0%, 100%': { backgroundPosition: '200% 0, 0 0' },
+          '50%': { backgroundPosition: '-200% 0, 0 0' },
+        }
       },
       zIndex: {
         '-1': '-1',
@@ -158,6 +164,21 @@ module.exports = {
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
-    require("tailwindcss-animate")
+    require("tailwindcss-animate"),
+    plugin(function({ addUtilities }) {
+      const newUtilities = {
+        '.bg-gradient-text': {
+          backgroundImage: 'linear-gradient(-45deg, transparent 40%, rgba(255, 255, 255, 0.5) 50%, transparent 60%), linear-gradient(45deg, #43CFB0, #2CACCB)',
+          backgroundSize: '200% 100%, 100% 100%',
+          backgroundPosition: '200% 0, 0 0',
+          WebkitBackgroundClip: 'text',
+          backgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          color: 'transparent',
+          animation: 'shine 2.5s linear infinite',
+        },
+      }
+      addUtilities(newUtilities, ['responsive', 'hover'])
+    })
   ],
 };
