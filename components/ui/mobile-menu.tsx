@@ -2,7 +2,10 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { Transition } from '@headlessui/react'
+import { MdMenu, MdClose } from "react-icons/md";
 import Link from 'next/link'
+import { Button } from '@/components/ui/button';
+import { FaApple, FaWindows } from 'react-icons/fa';
 
 export default function MobileMenu() {
   const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false)
@@ -32,21 +35,21 @@ export default function MobileMenu() {
   })
 
   return (
-    <div className="flex md:hidden">
+    <div className="flex lg:hidden">
       {/* Hamburger button */}
       <button
         ref={trigger}
-        className={`hamburger ${mobileNavOpen && 'active'}`}
+        className={`${mobileNavOpen && 'active'}`}
         aria-controls="mobile-nav"
         aria-expanded={mobileNavOpen}
         onClick={() => setMobileNavOpen(!mobileNavOpen)}
       >
         <span className="sr-only">Menu</span>
-        <svg className="w-6 h-6 fill-current text-gray-900" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <rect y="4" width="24" height="2" />
-          <rect y="11" width="24" height="2" />
-          <rect y="18" width="24" height="2" />
-        </svg>
+        {mobileNavOpen ? (
+          <MdClose className='h-8 w-8' />
+        ) : (
+          <MdMenu className='h-8 w-8' />
+        )}
       </button>
 
       {/*Mobile navigation */}
@@ -63,45 +66,32 @@ export default function MobileMenu() {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <ul className="px-5 py-2">
-            <li>
-              <Link href="/pricing" className="flex text-gray-600 hover:text-gray-900 py-2" onClick={() => setMobileNavOpen(false)}>Pricing</Link>
-            </li>
-            <li>
-              <Link href="/about" className="flex text-gray-600 hover:text-gray-900 py-2" onClick={() => setMobileNavOpen(false)}>About us</Link>
-            </li>
-            <li>
-              <Link href="/tutorials" className="flex text-gray-600 hover:text-gray-900 py-2" onClick={() => setMobileNavOpen(false)}>Tutorials</Link>
-            </li>
-            <li>
-              <Link href="/blog" className="flex text-gray-600 hover:text-gray-900 py-2" onClick={() => setMobileNavOpen(false)}>Blog</Link>
-            </li>
-            <li className="py-2 my-2 border-t border-b border-gray-200">
-              <span className="flex text-gray-600 hover:text-gray-900 py-2" onClick={() => setMobileNavOpen(false)}>Resources</span>
-              <ul className="pl-4">
-                <li>
-                  <Link href="/documentation" className="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2" onClick={() => setMobileNavOpen(false)}>Documentation</Link>
-                </li>
-                <li>
-                  <Link href="/support" className="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2" onClick={() => setMobileNavOpen(false)}>Support center</Link>
-                </li>
-                <li>
-                  <Link href="/404" className="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2" onClick={() => setMobileNavOpen(false)}>404</Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link href="/signin" className="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center" onClick={() => setMobileNavOpen(false)}>Sign in</Link>
-            </li>
-            <li>
-              <Link href="/signup" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2" onClick={() => setMobileNavOpen(false)}>
-                <span>Sign up</span>
-                <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fill="#999" fillRule="nonzero" />
-                </svg>
-              </Link>
-            </li>
-          </ul>          
+          <div className='flex flex-col space-y-6'>
+            <ul className="px-5 py-2 font-medium">
+              <li>
+                <Link href="/" className="flex text-gray-600 hover:text-gray-900 py-2" onClick={() => setMobileNavOpen(false)}>Home</Link>
+              </li>
+              <li>
+                <Link href="/about" className="flex text-gray-600 hover:text-gray-900 py-2" onClick={() => setMobileNavOpen(false)}>About us</Link>
+              </li>
+              <li>
+                <Link href="/contact" className="flex text-gray-600 hover:text-gray-900 py-2" onClick={() => setMobileNavOpen(false)}>Contact us</Link>
+              </li>
+            </ul>
+            <div className='px-5 py-2 w-full mx-auto flex flex-col items-center space-y-4'>
+              <h2 className='font-bold text-2xl'>Get the <span className="bg-clip-text text-transparent bg-gradient-to-l from-blue-500 to-teal-400">App</span></h2>
+              <div className="flex grow justify-center flex-wrap items-center gap-4">
+                <Button size="lg" className='hover:scale-[1.15] transition duration-300 space-x-2'>
+                  <FaApple className="h-5 w-5" />
+                  <span>MacOS</span>
+                </Button>
+                <Button size="lg" className='hover:scale-[1.15] transition-all duration-300 space-x-2'>
+                  <FaWindows className="h-5 w-5" />
+                  <span>Windows</span>
+                </Button>
+            </div>
+            </div>
+          </div>         
         </Transition>
       </div>
     </div>

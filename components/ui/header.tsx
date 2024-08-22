@@ -44,16 +44,16 @@ export default function Header() {
               <Image
                 src={NewLogo}
                 alt="HealthSync Logo"
-                className="max-w-[150px] md:max-w-[200px]"
+                className="max-w-[175px] md:max-w-[200px]"
               />
             </Link>
           </div>
 
           {/* Desktop navigation */}
-          <nav className="hidden md:flex md:grow">
+          <nav className="hidden lg:flex lg:grow">
 
             {/* Desktop menu links */}
-            <ul className="flex grow justify-end flex-wrap items-center  font-medium gap-4">
+            <ul className="flex grow justify-end flex-wrap items-center font-medium gap-4">
               {navItems.map((item, itemIdx) => (
                 <li key={itemIdx}>
                   <Link
