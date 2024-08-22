@@ -4,17 +4,28 @@ import { useState, useEffect } from 'react'
 
 import Link from 'next/link'
 import Logo from './logo'
-import Dropdown from '@/components/utils/dropdown'
+import NewLogo from '@/public/images/logo.png'
 import MobileMenu from './mobile-menu'
+import Image from 'next/image'
+import { usePathname } from 'next/navigation'
+import { Button } from './button'
+import { FaApple, FaWindows } from "react-icons/fa"
 
 export default function Header() {
+  const pathname = usePathname()
+
+  const navItems = [
+    { href: '/', label: 'Home' },
+    { href: '/about', label: 'About us' },
+    { href: '/contact', label: 'Contact us' },
+  ];
 
   const [top, setTop] = useState<boolean>(true)
 
   // detect whether user has scrolled the page down by 10px
   const scrollHandler = () => {
     window.pageYOffset > 10 ? setTop(false) : setTop(true)
-  }  
+  }
 
   useEffect(() => {
     scrollHandler()
@@ -24,69 +35,53 @@ export default function Header() {
 
   return (
     <header className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${!top ? 'bg-white backdrop-blur-sm shadow-lg' : ''}`}>
-      <div className="max-w-6xl mx-auto px-5 sm:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
+      <div className="max-w-9xl mx-auto px-5 sm:px-6">
+        <div className="flex items-center justify-between h-28">
 
           {/* Site branding */}
           <div className="shrink-0 mr-4">
-            <Logo />
+            <Link href="/">
+              <Image
+                src={NewLogo}
+                alt="HealthSync Logo"
+                className="max-w-[150px] md:max-w-[200px]"
+              />
+            </Link>
           </div>
 
           {/* Desktop navigation */}
           <nav className="hidden md:flex md:grow">
 
             {/* Desktop menu links */}
-            <ul className="flex grow justify-end flex-wrap items-center">
-              <li>
-                <Link href="/pricing" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Pricing</Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">About us</Link>
-              </li>
-              <li>
-                <Link href="/tutorials" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">
-                  Tutorials
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Blog</Link>
-              </li>
-              {/* 1st level: hover */}
-              <Dropdown title="Resources">
-                {/* 2nd level: hover */}
-                <li>
-                  <Link href="/documentation" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Documentation</Link>
+            <ul className="flex grow justify-end flex-wrap items-center text-lg font-medium gap-4">
+              {navItems.map((item, itemIdx) => (
+                <li key={itemIdx}>
+                  <Link
+                    href={item.href}
+                    className="relative group text-gray-800 hover:text-teal-500 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                  >
+                    <span className={`relative z-10 ${pathname === item.href ? 'text-teal-500' : ''}`}>{item.label}</span>
+                    <span className={`absolute bottom-0 right-0 h-[3px] bg-gradient-to-l from-blue-500 to-teal-500 transition-all duration-200 ${pathname === item.href ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                  </Link>
                 </li>
-                <li>
-                  <Link href="/support" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Support center</Link>
-                </li>
-                <li>
-                  <Link href="/404" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">404</Link>
-                </li>
-              </Dropdown>
+              ))}
             </ul>
-
-            {/* Desktop sign in links */}
-            <ul className="flex grow justify-end flex-wrap items-center">
-              <li>
-                <Link href="/signin" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in</Link>
-              </li>
-              <li>
-                <Link href="/signup" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
-                  <span>Sign up</span>
-                  <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
-                  </svg>
-                </Link>
-              </li>
-            </ul>
-
+            <div className="flex grow justify-end flex-wrap items-center gap-6">
+              <Button size="lg" className='hover:scale-125 transition duration-300 space-x-2'>
+                <FaApple className="h-5 w-5" />
+                <span>MacOS</span>
+              </Button>
+              <Button size="lg" className='hover:scale-125 transition-all duration-300 space-x-2'>
+                <FaWindows className="h-5 w-5" />
+                <span>Windows</span>
+              </Button>
+            </div>
           </nav>
 
           <MobileMenu />
 
         </div>
-      </div>
-    </header>
+      </div >
+    </header >
   )
 }
