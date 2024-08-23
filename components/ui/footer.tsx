@@ -2,6 +2,8 @@ import Logo from '@/public/images/logo.png';
 import Laptop from '@/public/images/laptop.webp';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Button } from './button';
+import { FaApple, FaWindows } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -62,20 +64,22 @@ export default function Footer() {
             <h6 className='text-gray-800 font-medium mb-2'>Available On</h6>
             <ul className='text-sm'>
               <li className='mb-2'>
-                <a
-                  href='#0'
-                  className='text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out'
+                <Button
+                  size='lg'
+                  className='space-x-2 w-1/2 sm:w-full md:w-11/12'
                 >
-                  Home
-                </a>
+                  <FaApple className='h-5 w-5' />
+                  <span>MacOS</span>
+                </Button>
               </li>
               <li className='mb-2'>
-                <a
-                  href='#0'
-                  className='text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out'
+                <Button
+                  size='lg'
+                  className='space-x-2 w-1/2 sm:w-full md:w-11/12'
                 >
-                  About us
-                </a>
+                  <FaWindows className='h-5 w-5' />
+                  <span>Windows</span>
+                </Button>
               </li>
             </ul>
           </div>
