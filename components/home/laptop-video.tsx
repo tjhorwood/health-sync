@@ -3,7 +3,10 @@ import React from 'react';
 
 export function LaptopVideo() {
   return (
-    <div className='flex flex-col overflow-hidden mb-20 mt-20 md:mt-10' data-aos='zoom-y-out'>
+    <div
+      className='flex flex-col overflow-hidden mb-20 mt-20 md:mt-10'
+      data-aos='zoom-y-out'
+    >
       <video
         autoPlay
         loop

@@ -1,8 +1,8 @@
 // Input component extends from shadcnui - https://ui.shadcn.com/docs/components/input
-"use client";
-import * as React from "react";
-import { cn } from "@/lib/utils";
-import { useMotionTemplate, useMotionValue, motion } from "framer-motion";
+'use client';
+import * as React from 'react';
+import { cn } from '@/lib/utils';
+import { useMotionTemplate, useMotionValue, motion } from 'framer-motion';
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}
@@ -26,7 +26,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         style={{
           background: useMotionTemplate`
         radial-gradient(
-          ${visible ? radius + "px" : "0px"} circle at ${mouseX}px ${mouseY}px,
+          ${visible ? radius + 'px' : '0px'} circle at ${mouseX}px ${mouseY}px,
           var(--blue-500),
           var(--teal-400), 
           transparent 80%
@@ -36,21 +36,21 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setVisible(true)}
         onMouseLeave={() => setVisible(false)}
-        className="p-[2px] rounded-lg transition duration-300 group/input"
+        className='p-[2px] rounded-lg transition duration-300 group/input'
       >
         <input
           type={type}
           className={cn(
             `flex h-12 w-full border bg-white text-black shadow-input rounded-sm px-3 py-2 placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 group-hover/input:shadow-none transition duration-400`,
-            className
+            className,
           )}
           ref={ref}
           {...props}
         />
       </motion.div>
     );
-  }
+  },
 );
-Input.displayName = "Input";
+Input.displayName = 'Input';
 
 export { Input };

@@ -3,7 +3,13 @@ import Laptop from '@/public/images/laptop.webp';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from './button';
-import { FaApple, FaFacebook, FaInstagram, FaTwitter, FaWindows } from 'react-icons/fa';
+import {
+  FaApple,
+  FaFacebook,
+  FaInstagram,
+  FaTwitter,
+  FaWindows,
+} from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -16,12 +22,16 @@ export default function Footer() {
             <div className='mb-2'>
               <Image
                 src={Logo}
-                alt="Health Sync Logo"
+                alt='Health Sync Logo'
                 className='max-w-[175px] md:max-w-[200px]'
               />
             </div>
             <div className='text-sm text-gray-600'>
-              <p>From the inception of our wellness app to the vibrant team steering its evolution, our narrative is one of passion, commitment, and continuous growth. We are more than a team.</p>
+              <p>
+                From the inception of our wellness app to the vibrant team
+                steering its evolution, our narrative is one of passion,
+                commitment, and continuous growth. We are more than a team.
+              </p>
             </div>
           </div>
 
@@ -30,12 +40,18 @@ export default function Footer() {
             <h6 className='text-gray-800 font-medium mb-2'>Useful Links</h6>
             <ul className='text-sm'>
               <li className='mb-2'>
-                <Link href='/' className='text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out'>
+                <Link
+                  href='/'
+                  className='text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out'
+                >
                   Home
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/about' className='text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out'>
+                <Link
+                  href='/about'
+                  className='text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out'
+                >
                   About us
                 </Link>
               </li>
@@ -47,12 +63,18 @@ export default function Footer() {
             <h6 className='text-gray-800 font-medium mb-2'>Support</h6>
             <ul className='text-sm'>
               <li className='mb-2'>
-                <Link href='/contact' className='text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out'>
+                <Link
+                  href='/contact'
+                  className='text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out'
+                >
                   Contact us
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/privacy' className='text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out'>
+                <Link
+                  href='/privacy'
+                  className='text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out'
+                >
                   Privacy Policy
                 </Link>
               </li>
@@ -86,20 +108,20 @@ export default function Footer() {
 
           {/* 5th block */}
           <div className='sm:col-span-6 md:col-span-3 lg:col-span-3'>
-          <div
-            className='relative max-w-full'
-            data-aos='zoom-y-out'
-            data-aos-delay='150'
-          >
-            <div className='absolute h-0 md:h-[150px] w-0 md:w-[150px] mx-auto inset-0 rounded-full bg-gradient-to-bl from-blue-500/80 to-teal-400/80 to-75% z-0'></div>
-            <div className='relative z-10'>
-              <Image
-                src={Laptop}
-                alt='laptop'
-                className='max-w-0 md:max-w-[200px] mx-auto'
-              />
+            <div
+              className='relative max-w-full'
+              data-aos='zoom-y-out'
+              data-aos-delay='150'
+            >
+              <div className='absolute h-0 md:h-[150px] w-0 md:w-[150px] mx-auto inset-0 rounded-full bg-gradient-to-bl from-blue-500/80 to-teal-400/80 to-75% z-0'></div>
+              <div className='relative z-10'>
+                <Image
+                  src={Laptop}
+                  alt='laptop'
+                  className='max-w-0 md:max-w-[200px] mx-auto'
+                />
+              </div>
             </div>
-          </div>
           </div>
         </div>
 

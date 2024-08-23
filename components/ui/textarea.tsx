@@ -1,7 +1,7 @@
-"use client";
-import * as React from "react"
-import { cn } from "@/lib/utils"
-import { motion, useMotionTemplate, useMotionValue } from "framer-motion"
+'use client';
+import * as React from 'react';
+import { cn } from '@/lib/utils';
+import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 
 export interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
@@ -25,7 +25,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         style={{
           background: useMotionTemplate`
         radial-gradient(
-          ${visible ? radius + "px" : "0px"} circle at ${mouseX}px ${mouseY}px,
+          ${visible ? radius + 'px' : '0px'} circle at ${mouseX}px ${mouseY}px,
           var(--blue-500),
           var(--teal-400), 
           transparent 80%
@@ -35,20 +35,20 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setVisible(true)}
         onMouseLeave={() => setVisible(false)}
-        className="p-[2px] rounded-lg transition duration-300 group/input"
+        className='p-[2px] rounded-lg transition duration-300 group/input'
       >
         <textarea
           className={cn(
-            "flex min-h-12 w-full rounded-sm border bg-white px-3 py-2 ring-offset-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 group-hover/input:shadow-none transition duration-400",
-            className
+            'flex min-h-12 w-full rounded-sm border bg-white px-3 py-2 ring-offset-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 group-hover/input:shadow-none transition duration-400',
+            className,
           )}
           ref={ref}
           {...props}
         />
       </motion.div>
-    )
-  }
-)
-Textarea.displayName = "Textarea"
+    );
+  },
+);
+Textarea.displayName = 'Textarea';
 
-export { Textarea }
+export { Textarea };
