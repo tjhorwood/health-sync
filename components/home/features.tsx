@@ -8,6 +8,21 @@ import FeaturesBg01 from '@/public/images/features-home-bg-01.png';
 import FeaturesElement01 from '@/public/images/features-home-element-01.png';
 import FeaturesElement02 from '@/public/images/features-home-element-02.png';
 import FeaturesElement03 from '@/public/images/features-home-element-03.png';
+import { FaThumbsUp, FaCheck } from "react-icons/fa";
+import { GiHealthIncrease, GiInspiration } from 'react-icons/gi'
+
+
+const FeatureItem = ({ icon, color, title, description }: any) => (
+  <div className="flex flex-col items-center">
+    <div className={`w-24 h-24 rounded-full ${color} flex items-center justify-center mb-4 shadow-lg`}>
+      {icon}
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-md w-full max-w-xs">
+      <h3 className="font-bold text-lg mb-2">{title}</h3>
+      <p className="text-gray-600 text-sm">{description}</p>
+    </div>
+  </div>
+);
 
 export default function Features() {
   const [tab, setTab] = useState<number>(1);
@@ -33,19 +48,40 @@ export default function Features() {
       <div className='relative max-w-6xl mx-auto px-4 sm:px-6'>
         <div className='pt-12 md:pt-20'>
           {/* Section header */}
-          <div className='max-w-3xl mx-auto text-center pb-12 md:pb-16'>
-            <h1 className='h1 mb-4'>
+          <div className='max-w-3xl mx-auto text-center pb-6 md:pb-8'>
+            <h1 className='mb-4 text-3xl md:text-5xl font-extrabold leading-tighter tracking-tighter'>
               Why Choose{' '}
               <span className='bg-clip-text text-transparent bg-gradient-to-l from-blue-500 to-teal-400 to-75%'>
                 Us
               </span>
               ?
             </h1>
-            <p className='text-xl text-gray-600'>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur excepteur sint occaecat
-              cupidatat.
-            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-8">
+            <FeatureItem
+              icon={<FaThumbsUp className='h-12 w-12 text-white' />}
+              color="bg-emerald-400"
+              title="Simple to Use"
+              description="Simple to use interface which has fresh daily content everyday!"
+            />
+            <FeatureItem
+              icon={<FaCheck className='h-12 w-12 text-white' />}
+              color="bg-yellow-400"
+              title="Health Insurance Approved"
+              description="Reimbursement approved fitness programs and integrated physicians to help guide your whole health journey"
+            />
+            <FeatureItem
+              icon={<GiHealthIncrease className='h-12 w-12 text-white' />}
+              color="bg-sky-400"
+              title="Focus on Whole Health"
+              description="Bodyweight exercises, kettlebell, yoga, guided meditation, breathwork and more! All can be done from your home"
+            />
+            <FeatureItem
+              icon={<GiInspiration className='h-12 w-12 text-white' />}
+              color="bg-pink-500"
+              title="Become an Inspiration"
+              description="A parent guide on how to incorporate well-being at home with children"
+            />
           </div>
 
           {/* Top image */}
