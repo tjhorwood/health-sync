@@ -10,14 +10,20 @@ import FeaturesElement02 from '@/public/images/features-home-element-02.png';
 import FeaturesElement03 from '@/public/images/features-home-element-03.png';
 import { FaThumbsUp, FaCheck } from "react-icons/fa";
 import { GiHealthIncrease, GiInspiration } from 'react-icons/gi'
+import { cn } from '@/lib/utils';
 
 
-const FeatureItem = ({ icon, color, title, description }: any) => (
-  <div className="flex flex-col items-center">
+const FeatureItem = ({ icon, color, title, description, className }: any) => (
+  <div 
+    className={cn(
+      `flex flex-col items-center h-full w-full transform lg:animate-float`,
+      className,
+    )}
+  >
     <div className={`w-24 h-24 rounded-full ${color} flex items-center justify-center mb-4 shadow-lg`}>
       {icon}
     </div>
-    <div className="bg-white rounded-lg p-4 shadow-md w-full max-w-xs">
+    <div className="bg-white rounded-lg p-4 shadow-md w-full max-w-xs flex flex-col justify-start flex-grow">
       <h3 className="font-bold text-lg mb-2">{title}</h3>
       <p className="text-gray-600 text-sm">{description}</p>
     </div>
@@ -45,7 +51,7 @@ export default function Features() {
         className='absolute inset-0 bg-gray-100 pointer-events-none mb-16'
         aria-hidden='true'
       ></div>
-      <div className='relative max-w-6xl mx-auto px-4 sm:px-6'>
+      <div className='relative max-w-7xl mx-auto px-4 sm:px-6'>
         <div className='pt-12 md:pt-20'>
           {/* Section header */}
           <div className='max-w-3xl mx-auto text-center pb-6 md:pb-8'>
@@ -69,18 +75,21 @@ export default function Features() {
               color="bg-yellow-400"
               title="Health Insurance Approved"
               description="Reimbursement approved fitness programs and integrated physicians to help guide your whole health journey"
+              className='animation-delay-500'
             />
             <FeatureItem
               icon={<GiHealthIncrease className='h-12 w-12 text-white' />}
               color="bg-sky-400"
               title="Focus on Whole Health"
               description="Bodyweight exercises, kettlebell, yoga, guided meditation, breathwork and more! All can be done from your home"
+              className='animation-delay-1000'
             />
             <FeatureItem
               icon={<GiInspiration className='h-12 w-12 text-white' />}
               color="bg-pink-500"
               title="Become an Inspiration"
               description="A parent guide on how to incorporate well-being at home with children"
+              className='animation-delay-1500'
             />
           </div>
 

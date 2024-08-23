@@ -1,5 +1,3 @@
-import VideoThumb from '@/public/images/hero-image-01.png';
-import ModalVideo from '@/components/modal-video';
 import Image from 'next/image';
 import Laptop from '@/public/images/laptop.webp';
 import Elevance from '@/public/images/elevance.svg';
