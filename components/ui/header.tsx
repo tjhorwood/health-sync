@@ -3,8 +3,7 @@
 import { useState, useEffect } from 'react';
 
 import Link from 'next/link';
-import Logo from './logo';
-import NewLogo from '@/public/images/logo.png';
+import Logo from '@/public/images/logo.png';
 import MobileMenu from './mobile-menu';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -43,7 +42,7 @@ export default function Header() {
           <div className='shrink-0 mr-4'>
             <Link href='/'>
               <Image
-                src={NewLogo}
+                src={Logo}
                 alt='HealthSync Logo'
                 className='max-w-[175px] md:max-w-[200px]'
               />
