@@ -1,11 +1,10 @@
 services:
-    healthsync:
-      container_name: healthsync
-      image: healthsync
-      restart: always
-      ports:
-        - 3030:3030
-      build:
-        context: .
-        dockerfile: Dockerfile
-  
+  healthsync:
+    container_name: healthsync
+    image: healthsync
+    restart: always
+    ports:
+      - 3030:3030
+    build:
+      context: .
+      dockerfile: Dockerfile
