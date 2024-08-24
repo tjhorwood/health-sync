@@ -19,19 +19,19 @@ export default function Vision() {
           <Image
             src={WomanStretching}
             alt='Woman Stretching'
-            className="absolute top-0 -right-8 w-56 h-56 rounded-xl z-20 animate-float animation-delay-1000"
+            className="absolute top-0 -right-8 w-40 h-40 lg:w-56 lg:h-56 rounded-xl z-20 animate-float animation-delay-1000"
             objectFit="cover"
           />
           <Image
             src={ManEating}
             alt='Man Eating'
-            className="absolute -bottom-8 -left-8 w-56 h-56 rounded-xl z-20 animate-float"
+            className="absolute -bottom-8 -left-8 w-40 h-40 lg:w-56 lg:h-56 rounded-xl z-20 animate-float"
             objectFit="cover"
           />
           <Image
             src={Dots}
             alt='Dots'
-            className="absolute bottom-6 right-12 w-20 h-56 z-0 animate-float animation-delay-500"
+            className="absolute -bottom-1 lg:bottom-6 right-12 w-20 h-56 z-0 animate-float animation-delay-500"
           />
         </div>
       </div>
