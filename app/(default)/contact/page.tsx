@@ -16,7 +16,7 @@ export default function Contact() {
             {/* Section header */}
             <div className='max-w-3xl mx-auto text-center pb-12 md:pb-16'>
               <h1
-                className='text-3xl md:text-5xl font-extrabold leading-tighter tracking-tighter'
+                className='text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tighter tracking-tighter'
                 data-aos='zoom-y-out'
               >
                 Have a question about{' '}

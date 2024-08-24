@@ -1,10 +1,8 @@
-import Intro from './intro';
-import Story from './story';
-import Stats from '@/components/stats';
-import Team from '@/components/team';
-import Career from '@/components/career';
-import Process from '@/components/process';
-import Cta from '@/components/cta-02';
+import { Button } from '@/components/ui/button';
+import Hero from '@/components/about/hero';
+import Team from '@/components/about/team';
+import Vision from '@/components/about/vision';
+import FAQs from '@/components/about/faq';
 
 export const metadata = {
   title: 'About - Health Sync',
@@ -14,13 +12,16 @@ export const metadata = {
 export default function About() {
   return (
     <>
-      <Intro />
-      <Story />
-      <Stats />
-      <Team />
-      <Career />
-      <Process />
-      <Cta />
+      <section>
+        <div className='max-w-8xl mx-auto px-4 sm:px-6'>
+          <div className='pt-32 pb-12 md:pb-20 space-y-14'>
+            <Hero />
+            <Team />
+            <Vision />
+            <FAQs />
+          </div>
+        </div>
+      </section>
     </>
   );
 }

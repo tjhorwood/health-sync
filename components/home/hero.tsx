@@ -11,13 +11,13 @@ export default function HeroHome() {
         <div className='flex flex-col lg:flex-row pt-32 pb-12 md:pt-40 md:pb-20 space-y-8'>
           <div className='w-full'>
             <h1
-              className='text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tighter tracking-tighter'
+              className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tighter tracking-tighter'
               data-aos='zoom-y-out'
             >
               Your New Holistic
             </h1>
             <h1
-              className='text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tighter tracking-tighter'
+              className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tighter tracking-tighter'
               data-aos='zoom-y-out'
             >
               <span className='bg-clip-text text-transparent bg-gradient-to-l from-blue-500 to-teal-400 to-75%'>

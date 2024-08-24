@@ -1,31 +1,41 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Transition } from '@headlessui/react';
 import Image from 'next/image';
-import TopImage from '@/public/images/features-top-image.png';
-import FeaturesBg01 from '@/public/images/features-home-bg-01.png';
-import FeaturesElement01 from '@/public/images/features-home-element-01.png';
-import FeaturesElement02 from '@/public/images/features-home-element-02.png';
-import FeaturesElement03 from '@/public/images/features-home-element-03.png';
-import { FaThumbsUp, FaCheck } from "react-icons/fa";
-import { GiHealthIncrease, GiInspiration } from 'react-icons/gi'
+import Comments from '@/public/images/comments.png';
+import Menu from '@/public/images/menu.webp';
+import Screen from '@/public/images/screen.webp';
+import GradientCircle from '@/public/images/gradientcircle.webp';
+import { BackgroundBeams } from '@/components/ui/background-beams';
+import { FaThumbsUp, FaCheck } from 'react-icons/fa';
+import { GiHealthIncrease, GiInspiration } from 'react-icons/gi';
 import { cn } from '@/lib/utils';
 
-
-const FeatureItem = ({ icon, color, title, description, className }: any) => (
-  <div 
+const FeatureItem = ({
+  icon,
+  color,
+  title,
+  description,
+  containerClassName,
+  iconClassName,
+}: any) => (
+  <div
     className={cn(
-      `flex flex-col items-center h-full w-full transform lg:animate-float`,
-      className,
+      `flex flex-col items-center h-full w-full transform lg:animate-float lg:odd:pt-10 lg:even:pb-10`,
+      containerClassName,
     )}
   >
-    <div className={`w-24 h-24 rounded-full ${color} flex items-center justify-center mb-4 shadow-lg`}>
+    <div
+      className={cn(
+        `w-20 h-20 lg:w-24 lg:h-24 rounded-full flex items-center justify-center mb-4 shadow-lg`,
+        iconClassName,
+      )}
+    >
       {icon}
     </div>
-    <div className="bg-white rounded-lg p-4 shadow-md w-full max-w-xs flex flex-col justify-start flex-grow">
-      <h3 className="font-bold text-lg mb-2">{title}</h3>
-      <p className="text-gray-600 text-sm">{description}</p>
+    <div className='bg-white rounded-lg p-4 shadow-md w-full max-w-full flex flex-col justify-start flex-grow lg:text-center'>
+      <h3 className='font-bold text-lg lg:text-xl mb-3'>{title}</h3>
+      <p className='text-gray-600'>{description}</p>
     </div>
   </div>
 );
@@ -55,7 +65,7 @@ export default function Features() {
         <div className='pt-12 md:pt-20'>
           {/* Section header */}
           <div className='max-w-3xl mx-auto text-center pb-6 md:pb-8'>
-            <h1 className='mb-4 text-3xl md:text-5xl font-extrabold leading-tighter tracking-tighter'>
+            <h1 className='mb-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tighter tracking-tighter'>
               Why Choose{' '}
               <span className='bg-clip-text text-transparent bg-gradient-to-l from-blue-500 to-teal-400 to-75%'>
                 Us
@@ -63,298 +73,42 @@ export default function Features() {
               ?
             </h1>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-8">
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-8'>
             <FeatureItem
-              icon={<FaThumbsUp className='h-12 w-12 text-white' />}
-              color="bg-emerald-400"
-              title="Simple to Use"
-              description="Simple to use interface which has fresh daily content everyday!"
+              icon={
+                <FaThumbsUp className='h-10 w-10 lg:h-12 lg:w-12 text-white' />
+              }
+              title='Simple to Use'
+              iconClassName='bg-emerald-400'
+              description='Simple to use interface which has fresh daily content everyday!'
             />
             <FeatureItem
-              icon={<FaCheck className='h-12 w-12 text-white' />}
-              color="bg-yellow-400"
-              title="Health Insurance Approved"
-              description="Reimbursement approved fitness programs and integrated physicians to help guide your whole health journey"
-              className='animation-delay-500'
+              icon={
+                <FaCheck className='h-10 w-10 lg:h-12 lg:w-12 text-white' />
+              }
+              title='Health Insurance Approved'
+              description='Reimbursement approved fitness programs and integrated physicians to help guide your whole health journey'
+              iconClassName='bg-yellow-400'
+              containerClassName='animation-delay-500'
             />
             <FeatureItem
-              icon={<GiHealthIncrease className='h-12 w-12 text-white' />}
-              color="bg-sky-400"
-              title="Focus on Whole Health"
-              description="Bodyweight exercises, kettlebell, yoga, guided meditation, breathwork and more! All can be done from your home"
-              className='animation-delay-1000'
+              icon={
+                <GiHealthIncrease className='h-10 w-10 lg:h-12 lg:w-12 text-white' />
+              }
+              title='Focus on Whole Health'
+              description='Bodyweight exercises, kettlebell, yoga, guided meditation, breathwork and more! All can be done from your home'
+              iconClassName='bg-sky-400'
+              containerClassName='animation-delay-1000'
             />
             <FeatureItem
-              icon={<GiInspiration className='h-12 w-12 text-white' />}
-              color="bg-pink-500"
-              title="Become an Inspiration"
-              description="A parent guide on how to incorporate well-being at home with children"
-              className='animation-delay-1500'
+              icon={
+                <GiInspiration className='h-10 w-10 lg:h-12 lg:w-12 text-white' />
+              }
+              title='Become an Inspiration'
+              description='A parent guide on how to incorporate well-being at home with children'
+              iconClassName='bg-pink-400'
+              containerClassName='animation-delay-1500'
             />
-          </div>
-
-          {/* Top image */}
-          <div className='pb-12 md:pb-16'>
-            <Image src={TopImage} width={1104} alt='Features top' />
-          </div>
-
-          {/* Section content */}
-          <div className='md:grid md:grid-cols-12 md:gap-6'>
-            {/* Content */}
-            <div
-              className='max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6'
-              data-aos='fade-right'
-            >
-              <div className='md:pr-4 lg:pr-12 xl:pr-16 mb-8'>
-                <h3 className='h3 mb-3'>Powerful suite of tools</h3>
-                <p className='text-xl text-gray-600'>
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa.
-                </p>
-              </div>
-              {/* Tabs buttons */}
-              <div className='mb-8 md:mb-0'>
-                <button
-                  className={`text-left flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${tab !== 1 ? 'bg-white shadow-md border-gray-200 hover:shadow-lg' : 'bg-gray-200 border-transparent'}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setTab(1);
-                  }}
-                >
-                  <div>
-                    <div className='font-bold leading-snug tracking-tight mb-1'>
-                      Building the Simple ecosystem
-                    </div>
-                    <div className='text-gray-600'>
-                      Take collaboration to the next level with security and
-                      administrative features built for teams.
-                    </div>
-                  </div>
-                  <div className='flex justify-center items-center w-8 h-8 bg-white rounded-full shadow shrink-0 ml-3'>
-                    <svg
-                      className='w-3 h-3 fill-current'
-                      viewBox='0 0 12 12'
-                      xmlns='http://www.w3.org/2000/svg'
-                    >
-                      <path d='M11.953 4.29a.5.5 0 00-.454-.292H6.14L6.984.62A.5.5 0 006.12.173l-6 7a.5.5 0 00.379.825h5.359l-.844 3.38a.5.5 0 00.864.445l6-7a.5.5 0 00.075-.534z' />
-                    </svg>
-                  </div>
-                </button>
-                <button
-                  className={`text-left flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${tab !== 2 ? 'bg-white shadow-md border-gray-200 hover:shadow-lg' : 'bg-gray-200 border-transparent'}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setTab(2);
-                  }}
-                >
-                  <div>
-                    <div className='font-bold leading-snug tracking-tight mb-1'>
-                      Building the Simple ecosystem
-                    </div>
-                    <div className='text-gray-600'>
-                      Take collaboration to the next level with security and
-                      administrative features built for teams.
-                    </div>
-                  </div>
-                  <div className='flex justify-center items-center w-8 h-8 bg-white rounded-full shadow shrink-0 ml-3'>
-                    <svg
-                      className='w-3 h-3 fill-current'
-                      viewBox='0 0 12 12'
-                      xmlns='http://www.w3.org/2000/svg'
-                    >
-                      <path
-                        d='M11.854.146a.5.5 0 00-.525-.116l-11 4a.5.5 0 00-.015.934l4.8 1.921 1.921 4.8A.5.5 0 007.5 12h.008a.5.5 0 00.462-.329l4-11a.5.5 0 00-.116-.525z'
-                        fillRule='nonzero'
-                      />
-                    </svg>
-                  </div>
-                </button>
-                <button
-                  className={`text-left flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${tab !== 3 ? 'bg-white shadow-md border-gray-200 hover:shadow-lg' : 'bg-gray-200 border-transparent'}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setTab(3);
-                  }}
-                >
-                  <div>
-                    <div className='font-bold leading-snug tracking-tight mb-1'>
-                      Building the Simple ecosystem
-                    </div>
-                    <div className='text-gray-600'>
-                      Take collaboration to the next level with security and
-                      administrative features built for teams.
-                    </div>
-                  </div>
-                  <div className='flex justify-center items-center w-8 h-8 bg-white rounded-full shadow shrink-0 ml-3'>
-                    <svg
-                      className='w-3 h-3 fill-current'
-                      viewBox='0 0 12 12'
-                      xmlns='http://www.w3.org/2000/svg'
-                    >
-                      <path
-                        d='M11.334 8.06a.5.5 0 00-.421-.237 6.023 6.023 0 01-5.905-6c0-.41.042-.82.125-1.221a.5.5 0 00-.614-.586 6 6 0 106.832 8.529.5.5 0 00-.017-.485z'
-                        fill='#191919'
-                        fillRule='nonzero'
-                      />
-                    </svg>
-                  </div>
-                </button>
-              </div>
-            </div>
-
-            {/* Tabs items */}
-            <div className='max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1'>
-              <div className='transition-all'>
-                <div
-                  className='relative flex flex-col text-center lg:text-right'
-                  data-aos='zoom-y-out'
-                  ref={tabs}
-                >
-                  {/* Item 1 */}
-                  <Transition
-                    as='div'
-                    show={tab === 1}
-                    enter='transition ease-in-out duration-700 transform order-first'
-                    enterFrom='opacity-0 translate-y-16'
-                    enterTo='opacity-100 translate-y-0'
-                    leave='transition ease-in-out duration-300 transform absolute'
-                    leaveFrom='opacity-100 translate-y-0'
-                    leaveTo='opacity-0 -translate-y-16'
-                    beforeEnter={() => heightFix()}
-                    unmount={false}
-                  >
-                    <div className='relative inline-flex flex-col'>
-                      <Image
-                        className='md:max-w-none mx-auto rounded'
-                        src={FeaturesBg01}
-                        width={500}
-                        height={375}
-                        alt='Features bg'
-                      />
-                      <Image
-                        className='md:max-w-none absolute w-full left-0 transform animate-float'
-                        src={FeaturesElement01}
-                        width={500}
-                        height={147}
-                        alt='Element 01'
-                        style={{ top: '22%' }}
-                      />
-                      <Image
-                        className='md:max-w-none absolute w-full left-0 transform animate-float animation-delay-500'
-                        src={FeaturesElement02}
-                        width={500}
-                        height={158}
-                        alt='Element 02'
-                        style={{ top: '39%' }}
-                      />
-                      <Image
-                        className='md:max-w-none absolute w-full left-0 bottom-0 transform animate-float animation-delay-1000'
-                        src={FeaturesElement03}
-                        width={500}
-                        height={167}
-                        alt='Element 03'
-                        style={{ top: '77%' }}
-                      />
-                    </div>
-                  </Transition>
-                  {/* Item 2 */}
-                  <Transition
-                    as='div'
-                    show={tab === 2}
-                    enter='transition ease-in-out duration-700 transform order-first'
-                    enterFrom='opacity-0 translate-y-16'
-                    enterTo='opacity-100 translate-y-0'
-                    leave='transition ease-in-out duration-300 transform absolute'
-                    leaveFrom='opacity-100 translate-y-0'
-                    leaveTo='opacity-0 -translate-y-16'
-                    beforeEnter={() => heightFix()}
-                    unmount={false}
-                  >
-                    <div className='relative inline-flex flex-col'>
-                      <Image
-                        className='md:max-w-none mx-auto rounded'
-                        src={FeaturesBg01}
-                        width={500}
-                        height={375}
-                        alt='Features bg'
-                      />
-                      <Image
-                        className='md:max-w-none absolute w-full left-0 bottom-0 transform animate-float animation-delay-1000'
-                        src={FeaturesElement03}
-                        width={500}
-                        height={167}
-                        alt='Element 03'
-                        style={{ top: '18%' }}
-                      />
-                      <Image
-                        className='md:max-w-none absolute w-full left-0 transform animate-float animation-delay-500'
-                        src={FeaturesElement02}
-                        width={500}
-                        height={158}
-                        alt='Element 02'
-                        style={{ top: '40%' }}
-                      />
-                      <Image
-                        className='md:max-w-none absolute w-full left-0 transform animate-float'
-                        src={FeaturesElement01}
-                        width={500}
-                        height={147}
-                        alt='Element 01'
-                        style={{ top: '79%' }}
-                      />
-                    </div>
-                  </Transition>
-                  {/* Item 3 */}
-                  <Transition
-                    as='div'
-                    show={tab === 3}
-                    enter='transition ease-in-out duration-700 transform order-first'
-                    enterFrom='opacity-0 translate-y-16'
-                    enterTo='opacity-100 translate-y-0'
-                    leave='transition ease-in-out duration-300 transform absolute'
-                    leaveFrom='opacity-100 translate-y-0'
-                    leaveTo='opacity-0 -translate-y-16'
-                    beforeEnter={() => heightFix()}
-                    unmount={false}
-                  >
-                    <div className='relative inline-flex flex-col'>
-                      <Image
-                        className='md:max-w-none mx-auto rounded'
-                        src={FeaturesBg01}
-                        width={500}
-                        height={375}
-                        alt='Features bg'
-                      />
-                      <Image
-                        className='md:max-w-none absolute w-full left-0 transform animate-float'
-                        src={FeaturesElement01}
-                        width={500}
-                        height={147}
-                        alt='Element 01'
-                        style={{ top: '22%' }}
-                      />
-                      <Image
-                        className='md:max-w-none absolute w-full left-0 transform animate-float animation-delay-500'
-                        src={FeaturesElement02}
-                        width={500}
-                        height={158}
-                        alt='Element 02'
-                        style={{ top: '39%' }}
-                      />
-                      <Image
-                        className='md:max-w-none absolute w-full left-0 bottom-0 transform animate-float animation-delay-1000'
-                        src={FeaturesElement03}
-                        width={500}
-                        height={167}
-                        alt='Element 03'
-                        style={{ top: '77%' }}
-                      />
-                    </div>
-                  </Transition>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
