@@ -17,10 +17,6 @@ export default function Home() {
       <Hero />
       <LaptopVideo />
       <Features />
-      <FeaturesBlocks />
-      <FeaturesWorld />
-      <News />
-      <Cta />
     </>
   );
 }

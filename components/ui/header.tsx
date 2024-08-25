@@ -34,7 +34,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed w-full z-30 transition ease-in-out ${!top ? 'bg-white shadow-lg' : ''}`}
+      className={`fixed w-full z-30 transition ease-in-out bg-white ${!top ? 'shadow-lg' : ''}`}
     >
       <div className='max-w-9xl mx-auto px-5 sm:px-6'>
         <div className='flex items-center justify-between h-24'>

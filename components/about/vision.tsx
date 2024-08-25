@@ -7,7 +7,7 @@ import Dots from '@/public/images/dots.webp'
 
 export default function Vision() {
   return (
-    <div className='flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto gap-14' data-aos='zoom-y-out'>
+    <div className='flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto gap-4 md:gap-14' data-aos='zoom-y-out'>
       <div className="w-full md:w-1/2 mb-8 md:mb-0">
         <div className="relative">
           <Image

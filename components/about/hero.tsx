@@ -4,7 +4,7 @@ export default function HeroAbout() {
   return (
     <>
       <div
-        className='bg-cover bg-center rounded-xl min-h-[500px] flex justify-center items-center shadow-lg'
+        className='bg-cover bg-center rounded-xl min-h-[350px] md:min-h-[500px] flex justify-center items-center shadow-lg'
         style={{
           backgroundImage:
             "url('https://koretechxdemo.link/healthsync/wp-content/uploads/2024/08/background-2.webp'",

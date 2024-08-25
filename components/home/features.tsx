@@ -55,14 +55,9 @@ export default function Features() {
   }, []);
 
   return (
-    <section className='relative'>
-      {/* Section background (needs .relative class on parent and next sibling elements) */}
-      <div
-        className='absolute inset-0 bg-gray-100 pointer-events-none mb-16'
-        aria-hidden='true'
-      ></div>
-      <div className='relative max-w-7xl mx-auto px-4 sm:px-6'>
-        <div className='pt-12 md:pt-20'>
+    <section className='relative bg-gray-100'>
+      <div className='relative max-w-7xl mx-auto px-4'>
+        <div className='py-10 md:py-16 space-y-6'>
           {/* Section header */}
           <div className='max-w-3xl mx-auto text-center pb-6 md:pb-8'>
             <h2 className='mb-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tighter tracking-tighter'>
@@ -73,45 +68,50 @@ export default function Features() {
               ?
             </h2>
           </div>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-8'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
+          {features.map((item, itemIdx) => (
             <FeatureItem
-              icon={
-                <FaThumbsUp className='h-10 w-10 lg:h-12 lg:w-12 text-white' />
-              }
-              title='Simple to Use'
-              iconClassName='bg-emerald-400'
-              description='Simple to use interface which has fresh daily content everyday!'
+              key={itemIdx}
+              icon={item.icon}
+              title={item.title}
+              iconClassName={item.iconClassName}
+              containerClassName={item.containerClassName}
+              description={item.description}
             />
-            <FeatureItem
-              icon={
-                <FaCheck className='h-10 w-10 lg:h-12 lg:w-12 text-white' />
-              }
-              title='Health Insurance Approved'
-              description='Reimbursement approved fitness programs and integrated physicians to help guide your whole health journey'
-              iconClassName='bg-yellow-400'
-              containerClassName='animation-delay-500'
-            />
-            <FeatureItem
-              icon={
-                <GiHealthIncrease className='h-10 w-10 lg:h-12 lg:w-12 text-white' />
-              }
-              title='Focus on Whole Health'
-              description='Bodyweight exercises, kettlebell, yoga, guided meditation, breathwork and more! All can be done from your home'
-              iconClassName='bg-sky-400'
-              containerClassName='animation-delay-1000'
-            />
-            <FeatureItem
-              icon={
-                <GiInspiration className='h-10 w-10 lg:h-12 lg:w-12 text-white' />
-              }
-              title='Become an Inspiration'
-              description='A parent guide on how to incorporate well-being at home with children'
-              iconClassName='bg-pink-400'
-              containerClassName='animation-delay-1500'
-            />
+          ))}
           </div>
         </div>
       </div>
     </section>
   );
 }
+
+const features = [
+  {
+    icon: <FaThumbsUp className='h-10 w-10 lg:h-12 lg:w-12 text-white' />,
+    title: 'Simple to Use',
+    iconClassName: 'bg-emerald-400',
+    description: 'Simple to use interface which has fresh daily content everyday!'
+  },
+  {
+    icon: <FaCheck className='h-10 w-10 lg:h-12 lg:w-12 text-white' />,
+    title: 'Health Insurance Approved',
+    description: 'Reimbursement approved fitness programs and integrated physicians to help guide your whole health journey',
+    iconClassName: 'bg-yellow-400',
+    containerClassName: 'animation-delay-500'
+  },
+  {
+    icon: <GiHealthIncrease className='h-10 w-10 lg:h-12 lg:w-12 text-white' />,
+    title: 'Focus on Whole Health',
+    description: 'Bodyweight exercises, kettlebell, yoga, guided meditation, breathwork and more! All can be done from your home',
+    iconClassName: 'bg-sky-400',
+    containerClassName: 'animation-delay-1000'
+  },
+  {
+    icon: <GiInspiration className='h-10 w-10 lg:h-12 lg:w-12 text-white' />,
+    title: 'Become an Inspiration',
+    description: 'A parent guide on how to incorporate well-being at home with children',
+    iconClassName: 'bg-pink-400',
+    containerClassName: 'animation-delay-1500'
+  },
+]
