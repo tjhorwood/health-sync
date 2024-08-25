@@ -110,8 +110,6 @@ export default function Footer() {
           <div className='sm:col-span-6 md:col-span-3 lg:col-span-3'>
             <div
               className='relative max-w-full'
-              data-aos='zoom-y-out'
-              data-aos-delay='150'
             >
               <div className='absolute h-0 md:h-[150px] w-0 md:w-[150px] mx-auto inset-0 rounded-full bg-gradient-to-bl from-blue-500/80 to-teal-400/80 to-75% z-0'></div>
               <div className='relative z-10'>

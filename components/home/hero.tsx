@@ -44,7 +44,7 @@ export default function HeroHome() {
                 <div>
                   <Button
                     size='lg'
-                    className='text-white text-md bg-gray-900 hover:bg-gray-800 w-full sm:w-auto'
+                    className='text-white lg:text-lg text-md bg-gray-900 hover:bg-gray-800 w-full sm:w-auto'
                   >
                     Learn more
                   </Button>

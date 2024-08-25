@@ -15,7 +15,7 @@ export default function Contact() {
           <div className='pt-32 pb-12 md:pt-40 md:pb-20'>
             {/* Section header */}
             <div className='max-w-3xl mx-auto text-center pb-12 md:pb-16'>
-              <h1
+              <h2
                 className='text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tighter tracking-tighter'
                 data-aos='zoom-y-out'
               >
@@ -24,7 +24,7 @@ export default function Contact() {
                   Health Sync
                 </span>
                 ? Contact us directly
-              </h1>
+              </h2>
             </div>
 
             {/* Contact form */}

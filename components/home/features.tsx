@@ -65,13 +65,13 @@ export default function Features() {
         <div className='pt-12 md:pt-20'>
           {/* Section header */}
           <div className='max-w-3xl mx-auto text-center pb-6 md:pb-8'>
-            <h1 className='mb-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tighter tracking-tighter'>
+            <h2 className='mb-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tighter tracking-tighter'>
               Why Choose{' '}
               <span className='bg-clip-text text-transparent bg-gradient-to-l from-blue-500 to-teal-400 to-75%'>
                 Us
               </span>
               ?
-            </h1>
+            </h2>
           </div>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-8'>
             <FeatureItem

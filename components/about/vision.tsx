@@ -36,16 +36,16 @@ export default function Vision() {
         </div>
       </div>
       <div className='w-full md:w-1/2 space-y-8'>
-        <h1 className='text-4xl md:text-5xl font-bold leading-tight'>
+        <h2 className='text-3xl sm:text-4xl md:text-5xl font-bold leading-tighter tracking-tighter'>
           Our{' '}
           <span className='bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500'>
             Vision
           </span>
-        </h1>
-        <p className='text-lg text-gray-600'>
+        </h2>
+        <p className='md:text-lg'>
           To offer a user-friendly tool for managing your overall health, with simple content for daily lifestyle changes, easy access to health insurance benefits, and guidance for your wellness journey.
         </p>
-        <Button size='lg' className="mt-4">Join Us</Button>
+        <Button size='lg' className="mt-4 lg:text-lg">Join Us</Button>
       </div>
     </div>
   );

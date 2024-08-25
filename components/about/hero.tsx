@@ -36,7 +36,7 @@ export default function HeroAbout() {
               Wellness Excellence
             </span>
           </h2>
-          <Button size='lg'>See Our Features</Button>
+          <Button size='lg' className='lg:text-lg'>See Our Features</Button>
         </div>
         <div className='w-full md:w-1/2'>
           <p className='md:text-lg'>
