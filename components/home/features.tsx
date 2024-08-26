@@ -55,8 +55,8 @@ export default function Features() {
   }, []);
 
   return (
-    <section className='relative bg-gray-100'>
-      <div className='relative max-w-7xl mx-auto px-4'>
+    <section className='relative bg-gray-100 max-w-9xl rounded-2xl mx-auto shadow'>
+      <div className='relative max-w-8xl mx-auto px-4'>
         <div className='py-10 md:py-16 space-y-6'>
           {/* Section header */}
           <div className='max-w-3xl mx-auto text-center pb-6 md:pb-8'>
@@ -69,16 +69,16 @@ export default function Features() {
             </h2>
           </div>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
-          {features.map((item, itemIdx) => (
-            <FeatureItem
-              key={itemIdx}
-              icon={item.icon}
-              title={item.title}
-              iconClassName={item.iconClassName}
-              containerClassName={item.containerClassName}
-              description={item.description}
-            />
-          ))}
+            {features.map((item, itemIdx) => (
+              <FeatureItem
+                key={itemIdx}
+                icon={item.icon}
+                title={item.title}
+                iconClassName={item.iconClassName}
+                containerClassName={item.containerClassName}
+                description={item.description}
+              />
+            ))}
           </div>
         </div>
       </div>

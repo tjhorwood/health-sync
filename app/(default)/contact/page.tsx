@@ -3,7 +3,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
 export const metadata = {
-  title: 'Contact - Health Sync',
+  title: 'Contact us - Health Sync',
   description: 'Contact us',
 };
 

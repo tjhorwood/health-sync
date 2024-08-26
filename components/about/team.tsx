@@ -1,5 +1,4 @@
 import Image from "next/image"
-import ManEating from '@/public/images/man-eating.webp'
 
 export default function Team() {
   return (
@@ -15,12 +14,12 @@ export default function Team() {
         >
           {people.map((person) => (
             <li key={person.name}>
-              <Image 
+              <Image
                 src={person.image}
                 alt={person.name}
                 width={224}
                 height={224}
-                className="mx-auto rounded-full scale-[1.1] md:scale-[1.2]" 
+                className="mx-auto rounded-full scale-[1.1] md:scale-[1.2]"
               />
               <h3 className="mt-2 text-lg md:text-xl font-semibold leading-7 tracking-tight text-gray-900">{person.name}</h3>
               <p className="leading-6">{person.role}</p>

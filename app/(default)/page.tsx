@@ -1,10 +1,8 @@
 import Hero from '@/components/home/hero';
 import Features from '@/components/home/features';
-import FeaturesBlocks from '@/components/features-blocks';
-import FeaturesWorld from '@/components/features-world';
-import News from '@/components/news';
-import Cta from '@/components/cta';
-import { LaptopVideo } from '@/components/home/laptop-video';
+import LaptopVideo from '@/components/home/laptop-video';
+import Revitalize from '@/components/home/revitalize';
+import Interface from '@/components/home/interface';
 
 export const metadata = {
   title: 'Health Sync',
@@ -13,10 +11,12 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <>
+    <div className='space-y-10'>
       <Hero />
       <LaptopVideo />
       <Features />
-    </>
+      <Revitalize />
+      <Interface />
+    </div>
   );
 }

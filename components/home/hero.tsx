@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 export default function HeroHome() {
   return (
     <section className='relative'>
-      <div className='max-w-8xl mx-auto px-4 sm:px-6'>
+      <div className='max-w-9xl mx-auto px-4 sm:px-6'>
         {/* Hero content */}
         <div className='flex flex-col lg:flex-row pt-32 pb-12 md:pt-40 md:pb-20 space-y-8'>
           <div className='w-full'>
