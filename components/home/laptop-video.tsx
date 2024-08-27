@@ -11,7 +11,7 @@ export default function LaptopVideo() {
         loop
         muted
         playsInline
-        className='max-w-9xl mx-auto w-full h-full object-cover'
+        className='w-full h-full object-cover'
       >
         <source src='/videos/laptop-video.mp4' type='video/mp4' />
         Your browser does not support the video tag.

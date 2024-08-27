@@ -3,6 +3,7 @@ import Features from '@/components/home/features';
 import LaptopVideo from '@/components/home/laptop-video';
 import Revitalize from '@/components/home/revitalize';
 import Interface from '@/components/home/interface';
+import UIOverview from '@/components/home/ui-overview';
 
 export const metadata = {
   title: 'Health Sync',
@@ -11,10 +12,11 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className='space-y-10'>
+    <div className='max-w-9xl mx-auto space-y-10'>
       <Hero />
       <LaptopVideo />
       <Features />
+      <UIOverview />
       <Revitalize />
       <Interface />
     </div>

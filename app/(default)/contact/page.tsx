@@ -1,13 +1,38 @@
+'use client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-
-export const metadata = {
-  title: 'Contact us - Health Sync',
-  description: 'Contact us',
-};
+import { useState } from 'react';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ firstname: '', lastname: '', email: '', subject: '', message: '' });
+  const [status, setStatus] = useState('');
+
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    setStatus('Sending...');
+
+    const response = await fetch('/api/discord', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      setStatus('Message sent successfully!');
+      setFormData({ firstname: '', lastname: '', email: '', subject: '', message: '' });
+    } else {
+      setStatus('Failed to send message.');
+    }
+  };
+
   return (
     <>
       <section>
@@ -32,6 +57,7 @@ export default function Contact() {
               className='max-w-xl mx-auto'
               data-aos='zoom-y-out'
               data-aos-delay='150'
+              onSubmit={handleSubmit}
             >
               <div className='flex flex-wrap -mx-3 mb-4'>
                 <div className='w-full md:w-1/2 px-3 mb-4 md:mb-0'>
@@ -43,8 +69,11 @@ export default function Contact() {
                   </label>
                   <Input
                     id='firstname'
+                    name='firstname'
                     placeholder='Enter your first name'
                     type='text'
+                    value={formData.firstname}
+                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -57,8 +86,11 @@ export default function Contact() {
                   </label>
                   <Input
                     id='lastname'
+                    name='lastname'
                     placeholder='Enter your last name'
                     type='text'
+                    value={formData.lastname}
+                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -73,8 +105,11 @@ export default function Contact() {
                   </label>
                   <Input
                     id='email'
+                    name='email'
                     placeholder='Enter your email address'
                     type='email'
+                    value={formData.email}
+                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -89,8 +124,11 @@ export default function Contact() {
                   </label>
                   <Input
                     id='subject'
+                    name='subject'
                     placeholder='How can we help you?'
                     type='text'
+                    value={formData.subject}
+                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -105,17 +143,21 @@ export default function Contact() {
                   </label>
                   <Textarea
                     id='message'
+                    name='message'
                     rows={4}
                     placeholder='Write your message'
+                    value={formData.message}
+                    onChange={handleChange}
                     required
                   />
                 </div>
               </div>
               <div className='flex flex-wrap -mx-3 mt-4'>
                 <div className='w-full px-3'>
-                  <Button size='lg' className='w-full text-md h-12'>
+                  <Button type='submit' size='lg' className='w-full text-md h-12'>
                     Send
                   </Button>
+                  <p>{status}</p>
                 </div>
               </div>
               <div className='text-sm text-gray-600 mt-4'>

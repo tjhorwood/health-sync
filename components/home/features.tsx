@@ -55,7 +55,7 @@ export default function Features() {
   }, []);
 
   return (
-    <section className='relative bg-gray-100 max-w-9xl rounded-2xl mx-auto shadow'>
+    <section className='relative bg-gray-100  rounded-2xl shadow'>
       <div className='relative max-w-8xl mx-auto px-4'>
         <div className='py-10 md:py-16 space-y-6'>
           {/* Section header */}

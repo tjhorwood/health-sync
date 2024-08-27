@@ -14,19 +14,16 @@ export default function Vision() {
             src={ManStretching}
             alt='Man Stretching'
             className="rounded-2xl z-10 relative"
-            objectFit="cover"
           />
           <Image
             src={WomanStretching}
             alt='Woman Stretching'
             className="absolute top-0 -right-8 w-40 h-40 lg:w-56 lg:h-56 rounded-xl z-20 animate-float animation-delay-1000"
-            objectFit="cover"
           />
           <Image
             src={ManEating}
             alt='Man Eating'
             className="absolute -bottom-8 -left-8 w-40 h-40 lg:w-56 lg:h-56 rounded-xl z-20 animate-float"
-            objectFit="cover"
           />
           <Image
             src={Dots}
