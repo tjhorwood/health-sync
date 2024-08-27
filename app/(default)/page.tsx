@@ -16,8 +16,10 @@ export default function Home() {
       <Hero />
       <LaptopVideo />
       <Features />
-      <UIOverview />
-      <Revitalize />
+      <div>
+        <UIOverview />
+        <Revitalize />
+      </div>
       <Interface />
     </div>
   );
