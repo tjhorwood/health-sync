@@ -1,3 +1,83 @@
+import Aishwarya from '@/images/aishwarya.webp';
+import Don from '@/images/don.webp';
+import Dots from '@/images/dots.webp';
+import WomanStretching from '@/images/girl-stretching.webp';
+import ManStretching from '@/images/male-stretching.webp';
+import ManEating from '@/images/man-eating.webp';
+import Matt from '@/images/matt.webp';
+import Taylor from '@/images/taylor.webp';
+
+// About - Team
+export const team = [
+  {
+    name: 'Matthew Beam',
+    role: 'Business Strategy',
+    image: Matt,
+  },
+  {
+    name: 'Taylor Horwood',
+    role: 'Technology',
+    image: Taylor,
+  },
+  {
+    name: 'Don Beam, MS, LPC',
+    role: 'Exercise Strategy and Wellness',
+    image: Don,
+  },
+  {
+    name: 'Aishwarya Sahu',
+    role: 'Yoga / Mindfullness Instructor',
+    image: Aishwarya,
+  },
+];
+
+// About - Vision
+export const visionImageData = [
+  {
+    src: ManStretching,
+    alt: 'Man Stretching',
+    className: 'relative z-10 rounded-2xl mx-auto',
+  },
+  {
+    src: WomanStretching,
+    alt: 'Woman Stretching',
+    className:
+      'animation-delay-1000 absolute -right-6 top-0 z-20 h-40 w-40 animate-float rounded-xl lg:h-56 lg:w-56',
+  },
+  {
+    src: ManEating,
+    alt: 'Man Eating',
+    className:
+      'absolute -bottom-8 -left-8 z-20 h-40 w-40 animate-float rounded-xl lg:h-56 lg:w-56',
+  },
+  {
+    src: Dots,
+    alt: 'Dots',
+    className:
+      'animation-delay-500 absolute -bottom-1 right-24 z-0 h-56 w-20 animate-float lg:bottom-6',
+  },
+];
+
+// About - FAQ
+export const faqData = [
+  {
+    label: 'How does this app work?',
+    content:
+      'The app is running like any other program on your computer. Except the big difference from our competitors, we do not collect ANY of your data, location or history. It only uses what information you give it to improve your health journey!',
+  },
+  {
+    label: 'How does work with my insurance?',
+    content:
+      'If you are currently covered under the Anthem Blue Cross Blue Shield umbrella, this directly connects to your Sydney health profile and allows you to have seamless integration of this app with your available benefits.',
+  },
+  {
+    label: 'How can I maximize the benefits of this app?',
+    content:
+      'Follow the 80 / 20 rule! Eat healthy, get adequate sleep, reduce alcohol consumption and make an effort to get your daily sunlight outside! Bonus points of removing products from your house which contain forever chemicals and other banned ingredients in most countries.',
+  },
+];
+
+// Privacy Policy
 export const privacyPolcies = [
   {
     number: '1',
@@ -63,6 +143,7 @@ export const privacyPolcies = [
   },
 ];
 
+// Terms and Conditions
 export const termsConditions = [
   {
     number: '1',
@@ -126,6 +207,7 @@ export const termsConditions = [
   },
 ];
 
+// Legal Notices
 export const legalNotices = [
   {
     number: '1',

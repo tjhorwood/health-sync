@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
-import { MdMenu, MdClose } from 'react-icons/md';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { useEffect, useRef, useState } from 'react';
 import { FaApple, FaWindows } from 'react-icons/fa';
+import { MdClose, MdMenu } from 'react-icons/md';
+
+import { Button } from '@/components/ui/button';
 
 export default function MobileMenu({ navItems }: any) {
   const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);

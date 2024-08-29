@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect } from 'react';
+import 'aos/dist/aos.css';
 
 import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 export default function InformationalLayout({
   children,

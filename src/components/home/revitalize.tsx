@@ -1,8 +1,9 @@
+import Image from 'next/image';
 import React from 'react';
+
+import RevitalizeBG from '@/images/revitalize-bg.webp';
 import Tablet1 from '@/images/tablet-1.webp';
 import Tablet2 from '@/images/tablet-2.png';
-import RevitalizeBG from '@/images/revitalize-bg.webp';
-import Image from 'next/image';
 
 export default function Revitalize() {
   return (

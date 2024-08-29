@@ -4,13 +4,20 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  plugins: ['@typescript-eslint', 'simple-import-sort', 'unused-imports'],
+  plugins: [
+    '@typescript-eslint',
+    'simple-import-sort',
+    'unused-imports',
+    'import',
+  ],
   extends: [
     'eslint:recommended',
     'next',
     'next/core-web-vitals',
     'plugin:@typescript-eslint/recommended',
     'prettier',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
   ],
   rules: {
     'no-unused-vars': 'off',
@@ -62,7 +69,7 @@ module.exports = {
             '^\\./?$',
             '^\\.(?!/?$)',
             '^\\.\\./?$',
-            '^\\.\\.(?!/?$)',
+            '^\\.\\./\\.(?!/?$)',
             '^\\.\\./\\.\\./?$',
             '^\\.\\./\\.\\.(?!/?$)',
             '^\\.\\./\\.\\./\\.\\./?$',
@@ -75,6 +82,13 @@ module.exports = {
       },
     ],
     //#endregion  //*======== Import Sort ===========
+
+    // Add these rules
+    'import/first': 'error',
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
   },
   globals: {
     React: true,

@@ -1,19 +1,17 @@
-import React from 'react';
-import Library from '@/images/library.webp';
-import Journal from '@/images/journal.png';
-import Fitness from '@/images/fitness.webp';
-import DailyTasks from '@/images/dailytasks.webp';
 import Image from 'next/image';
+import React from 'react';
+
+import GradientText from '@/components/ui/gradient-text';
+import Fitness from '@/images/fitness.webp';
+import Journal from '@/images/journal.png';
+import Library from '@/images/library.webp';
 
 export default function Interface() {
   return (
     <div className='mx-auto max-w-9xl px-4 pb-32 pt-16 sm:px-6 lg:px-8'>
       <h2 className='mx-auto mb-12 max-w-6xl text-center text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-5xl'>
-        Easy to Use Interface,{' '}
-        <span className='bg-gradient-to-l from-blue-500 to-teal-400 bg-clip-text text-transparent'>
-          Fully Customized
-        </span>{' '}
-        for your preference
+        Easy to Use Interface, <GradientText>Fully Customized</GradientText> for
+        your preference
       </h2>
 
       <div className='relative mx-auto flex max-w-8xl items-center justify-center'>

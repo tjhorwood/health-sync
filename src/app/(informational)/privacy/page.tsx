@@ -1,4 +1,5 @@
 import { privacyPolcies } from '@/lib/data';
+
 export default function PrivacyPolicy() {
   return (
     <>

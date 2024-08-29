@@ -1,7 +1,8 @@
 import Image from 'next/image';
-import Screen from '@/images/screen.webp';
+
 import Comments from '@/images/comments.png';
 import Menu from '@/images/menu.webp';
+import Screen from '@/images/screen.webp';
 
 export default function UIOverview() {
   return (
