@@ -1,4 +1,5 @@
 import { termsConditions } from '@/lib/data';
+
 export default function TermsConditions() {
   return (
     <>

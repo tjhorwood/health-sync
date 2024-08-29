@@ -1,4 +1,5 @@
 import { legalNotices } from '@/lib/data';
+
 export default function LegalNoticePage() {
   return (
     <>
