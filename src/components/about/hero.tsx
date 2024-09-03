@@ -18,6 +18,7 @@ export default function HeroAbout() {
           layout='fill'
           objectFit='cover'
           className='rounded-xl'
+          priority={true}
         />
         <div className='relative z-10 mx-auto max-w-2xl space-y-6 px-8 text-center md:px-4'>
           <h1 className='text-3xl font-bold leading-tighter tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl'>

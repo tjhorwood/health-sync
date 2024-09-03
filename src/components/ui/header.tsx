@@ -6,15 +6,15 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { FaApple, FaWindows } from 'react-icons/fa';
 
-import Logo from '@/images/logo.png';
+import Logo from '@/images/logo.webp';
 
 import { Button } from './button';
 import MobileMenu from './mobile-menu';
 
 const navItems = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About us' },
-  { href: '/contact', label: 'Contact us' },
+  { href: '/about', label: 'About Us' },
+  { href: '/contact', label: 'Contact Us' },
 ];
 
 export default function Header() {
