@@ -1,6 +1,8 @@
 import '@/styles/globals.css';
 
 import { Poppins } from 'next/font/google';
+import Head from 'next/head';
+import { Metadata } from 'next/types';
 
 import MatomoTracker from '@/components/matomo-analytics';
 import Footer from '@/components/ui/footer';
@@ -13,6 +15,14 @@ const poppins = Poppins({
   display: 'swap',
 });
 
+export const metadata: Metadata = {
+  title: {
+    template: `%s | Health Sync`,
+    default: 'Health Sync',
+  },
+  description: 'Health Sync',
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -20,6 +30,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
+      <Head>
+        <link rel='preload' href='/images/logo.webp' as='image' />
+        <link rel='preload' href='/images/laptop.webp' as='image' />
+      </Head>
       <body
         className={`${poppins.variable} bg-white font-poppins tracking-tight text-gray-900 antialiased`}
       >

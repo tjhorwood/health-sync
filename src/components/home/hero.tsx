@@ -67,6 +67,7 @@ export default function HeroHome() {
             src={Laptop}
             alt='laptop'
             className='relative z-10 mx-auto sm:max-w-[500px] lg:max-w-full'
+            priority={true}
           />
         </div>
       </div>
