@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
 import GradientText from '@/components/ui/gradient-text';
-import Elevance from '@/images/elevance.svg';
 import Laptop from '@/images/laptop.webp';
 
 export default function HeroHome() {
@@ -46,12 +45,12 @@ export default function HeroHome() {
                 </Button>
               </Link>
               <div className='flex items-center justify-between sm:max-w-xs'>
-                <p className='w-2/3'>Brought to you by:</p>
-                <Image
+                <p className='w-full'>Brought to you by: <GradientText className='font-semibold italic text-lg'>Your Healthplan</GradientText></p>
+                {/* <Image
                   src={Elevance}
                   alt='Elevance Health'
                   className='max-h-[60px] w-1/3 sm:-ml-10'
-                />
+                /> */}
               </div>
             </div>
           </div>
