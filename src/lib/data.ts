@@ -26,7 +26,7 @@ export const team = [
   },
   {
     name: 'Aishwarya Sahu',
-    role: 'Yoga / Mindfullness Instructor',
+    role: 'Yoga / Mindfulness Instructor',
     image: Aishwarya,
   },
 ];
