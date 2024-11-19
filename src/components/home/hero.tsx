@@ -45,7 +45,12 @@ export default function HeroHome() {
                 </Button>
               </Link>
               <div className='flex items-center justify-between sm:max-w-xs'>
-                <p className='w-full'>Brought to you by: <GradientText className='font-semibold italic text-lg'>Your Healthplan</GradientText></p>
+                <p className='w-full'>
+                  Brought to you by:{' '}
+                  <GradientText className='text-lg font-semibold italic'>
+                    Your Healthplan
+                  </GradientText>
+                </p>
                 {/* <Image
                   src={Elevance}
                   alt='Elevance Health'
