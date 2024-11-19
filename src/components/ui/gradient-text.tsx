@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 
 interface GradientTextProps {
   children: React.ReactNode;
-  className?: string
+  className?: string;
 }
 
 const GradientText: React.FC<GradientTextProps> = ({ className, children }) => {

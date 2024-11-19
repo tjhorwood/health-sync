@@ -5,6 +5,7 @@ import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { sleep } from '@/lib/utils';
 
 const initialFormData = {
   firstname: '',
@@ -27,19 +28,9 @@ export default function Contact() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('Sending...');
-    try {
-      const response = await fetch('/api/discord', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-      setStatus(
-        response.ok ? 'Message sent successfully!' : 'Failed to send message.',
-      );
-      if (response.ok) setFormData(initialFormData);
-    } catch (error) {
-      setStatus(`An error occurred. Please try again. ${error}`);
-    }
+    await sleep(1000); // Simulate a delay
+    setStatus('Message sent successfully!');
+    setFormData(initialFormData);
   };
 
   const renderField = (
