@@ -4,7 +4,6 @@ import { Poppins } from 'next/font/google';
 import Head from 'next/head';
 import { Metadata } from 'next/types';
 
-import MatomoTracker from '@/components/matomo-analytics';
 import Footer from '@/components/ui/footer';
 import Header from '@/components/ui/header';
 
@@ -42,7 +41,6 @@ export default function RootLayout({
           {children}
           <Footer />
         </div>
-        <MatomoTracker />
       </body>
     </html>
   );
